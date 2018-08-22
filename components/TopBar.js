@@ -62,10 +62,10 @@ const TopBar = (props) => {
             style={styles.more}
             onPress={() => onMorePress()}
             paddingRight
-            iconOff="more-horiz"
-            iconOn="more-horiz"
+            iconOff="close"
+            iconOn="close"
             theme={theme.more}
-            size={25}
+            size={40}
           />
         }
       </View>
