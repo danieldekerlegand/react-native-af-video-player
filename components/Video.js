@@ -89,7 +89,7 @@ class Video extends Component {
   onLoad(data) {
     if (!this.state.loading) return
     this.props.onLoad(data)
-    const { height, width } = data.naturalSize   
+    const { height, width } = data.naturalSize
     const ratio = height === 'undefined' && width === 'undefined' ?
       (9 / 16) : (height / width)
     const inlineHeight = this.props.lockRatio ?
@@ -421,6 +421,7 @@ class Video extends Component {
           onMorePress={() => onMorePress()}
           theme={setTheme}
           inlineOnly={inlineOnly}
+          hideFullscreenControl={hideFullscreenControl}
         />
       </Animated.View>
     )
@@ -452,6 +453,7 @@ Video.propTypes = {
   loop: PropTypes.bool,
   autoPlay: PropTypes.bool,
   inlineOnly: PropTypes.bool,
+  hideFullscreenControl: PropTypes.bool,
   fullScreenOnly: PropTypes.bool,
   playInBackground: PropTypes.bool,
   playWhenInactive: PropTypes.bool,
@@ -481,6 +483,7 @@ Video.defaultProps = {
   loop: false,
   autoPlay: false,
   inlineOnly: false,
+  hideFullscreenControl: false,
   fullScreenOnly: false,
   playInBackground: false,
   playWhenInactive: false,
