@@ -351,6 +351,7 @@ class Video extends Component {
       resizeMode,
       onMorePress,
       inlineOnly,
+      hideFullscreenControl,
       playInBackground,
       playWhenInactive
     } = this.props
