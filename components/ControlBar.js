@@ -27,6 +27,8 @@ const ControlBar = (props) => {
     hideFullscreenControl
   } = props
 
+  console.log("ControlBar props", props);
+
   return (
     <LinearGradient colors={['rgba(0,0,0,0)', 'rgba(0,0,0,0.75)']} style={styles.container}>
       <Time time={currentTime} theme={theme.seconds} />
