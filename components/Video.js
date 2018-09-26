@@ -325,9 +325,7 @@ class Video extends Component {
     )
   }
 
-  renderPlayer() {
-    console.log("video player this.props", this.props);
-    
+  renderPlayer() {  
     const {
       fullScreen,
       paused,
