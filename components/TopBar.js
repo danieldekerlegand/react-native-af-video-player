@@ -16,8 +16,9 @@ const backgroundColor = 'transparent'
 
 const styles = StyleSheet.create({
   container: {
-    height: 35,
-    justifyContent: 'center'
+    height: 45,
+    justifyContent: 'center',
+    paddingTop: 10
   },
   row: {
     flexDirection: 'row',
