@@ -108,8 +108,14 @@ class Video extends Component {
         if (this.props.fullScreenOnly) {
           this.setState({ fullScreen: true }, () => {
             this.props.onFullScreen(this.state.fullScreen)
-            this.animToFullscreen(Win.height)
-            if (this.props.rotateToFullScreen) Orientation.lockToLandscape()
+            Orientation.getOrientation((orientation) => {
+              if (orientation === 'LANDSCAPE-LEFT' || orientation === 'LANDSCAPE-RIGHT') {
+                this.animToFullscreen(Win.width)
+              } else {
+                this.animToFullscreen(Win.height)
+              }
+              if (this.props.rotateToFullScreen) Orientation.lockToLandscape()
+            })
           })
         }
       }
@@ -325,7 +331,7 @@ class Video extends Component {
     )
   }
 
-  renderPlayer() {  
+  renderPlayer() {
     const {
       fullScreen,
       paused,
