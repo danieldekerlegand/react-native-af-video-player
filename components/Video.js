@@ -108,8 +108,7 @@ class Video extends Component {
         if (this.props.fullScreenOnly) {
           this.setState({ fullScreen: true }, () => {
             this.props.onFullScreen(this.state.fullScreen)
-            Orientation.getOrientation((e, orientation) => {
-              console.log("orientation", orientation)
+            Orientation.getOrientation((orientation) => {
               if (orientation === 'LANDSCAPE-LEFT' || orientation === 'LANDSCAPE-RIGHT') {
                 this.animToFullscreen(Win.width)
               } else {
